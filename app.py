@@ -19,12 +19,13 @@ st.title("🍫 Nassau Candy - Product Profitability & Margin Analysis")
 #DATASET
 df = pd.read_csv("nassau_candy_cleaned.csv")
 
+df.columns = df.columns.str.strip()
 
 df["Order Date"] = pd.to_datetime(
     df["Order Date"],
-    dayfirst=True,
     errors="coerce"
 )
+
 
 
 st.sidebar.header("🔎 Filters")
